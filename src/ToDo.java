@@ -71,7 +71,6 @@ public class ToDo extends SimpleTask{
             case (1):
                 addInput();
                 break;
-            case(2):
 
         }
     }

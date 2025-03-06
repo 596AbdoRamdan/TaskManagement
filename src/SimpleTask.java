@@ -13,8 +13,10 @@ public class SimpleTask {
     boolean complete = false;
     ArrayList<String>tasks = new ArrayList<>();
     ArrayList<LocalDate> dates = new ArrayList<>();
+    ArrayList<Boolean> status = new ArrayList<>();
     ArrayList<String>completedTasks= new ArrayList<>();
     ArrayList<LocalDate> completeDates = new ArrayList<>();
+
 
     protected boolean valid(String s) {
         try {
@@ -108,7 +110,8 @@ public class SimpleTask {
         if (index >= 0 && index < tasks.size()) {
             String task = tasks.get(index);
             LocalDate d = dates.get(index);
-            complete = true;
+
+            status.add(true);
             completedTasks.add(task);
             completeDates.add(d);
             tasks.remove(index);
@@ -140,7 +143,7 @@ public class SimpleTask {
 
                 for (int i = 0 ; i < completedTasks.size();i++)
                 {
-                    System.out.println("Task ("+i+")\t"+"date: " + completeDates.get(i) + "\t" + completedTasks.get(i));
+                    System.out.println("Task ("+i+")\t"+"date: " + completeDates.get(i) + "\t" + completedTasks.get(i) + "\t" + status.get(i));
                 }
         }
     }

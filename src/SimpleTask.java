@@ -74,10 +74,7 @@ public class SimpleTask {
         }
     }
 
-    public void update(int i , String newTitle)
-    {
-        update(i,newTitle, this.description, LocalDate.now().toString());
-    }
+
     public void update(int i,String newtitle, String newdescription) {
         update(i,newtitle, newdescription, LocalDate.now().toString());
     }

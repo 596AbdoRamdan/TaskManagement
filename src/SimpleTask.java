@@ -83,7 +83,6 @@ public class SimpleTask {
             System.out.println("Invalid task index!");
             return;
         }
-
             if (valid(newDate))
             {
                 task = newTitle + ":\t" + newDescription;

@@ -18,7 +18,7 @@ public class SimpleTask {
     ArrayList<LocalDate> completeDates = new ArrayList<>();
 
 
-    protected boolean valid(String s) {
+    protected  boolean valid(String s) {
         try {
             date = LocalDate.parse(s, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
@@ -123,7 +123,7 @@ public class SimpleTask {
 
 
 
-    public void print()
+    public  void  print()
     {
         if (tasks.isEmpty()&&dates.isEmpty()) {
             System.out.println("List is Empty.");

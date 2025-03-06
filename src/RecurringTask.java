@@ -31,8 +31,5 @@ public class RecurringTask extends SimpleTask {
             }
 
     }
-     public void pr()
-    {
-        System.out.println("A7A");
-    }
+
 }

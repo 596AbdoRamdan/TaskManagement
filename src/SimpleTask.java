@@ -32,13 +32,13 @@ public class SimpleTask {
         return valid;
     }
     protected void sort() {
-        LocalDate today = LocalDate.now();
+
         ArrayList<Integer> indices = new ArrayList<>();
 
         for (int i = 0; i < dates.size(); i++) indices.add(i);
         indices.sort((i, j) -> {
-            long diff1 = Math.abs(dates.get(i).toEpochDay() - today.toEpochDay());
-            long diff2 = Math.abs(dates.get(j).toEpochDay() - today.toEpochDay());
+            long diff1 = Math.abs(dates.get(i).toEpochDay() - LocalDate.now().toEpochDay());
+            long diff2 = Math.abs(dates.get(j).toEpochDay() - LocalDate.now().toEpochDay());
             return Long.compare(diff1, diff2);
         });
 
@@ -82,7 +82,12 @@ public class SimpleTask {
 
 
     }
-    final public void update(int i,String newtitle, String newdescription) {
+
+    public void update(int i , String newTitle)
+    {
+        update(i,newTitle, this.description, LocalDate.now().toString());
+    }
+    public void update(int i,String newtitle, String newdescription) {
         update(i,newtitle, newdescription, LocalDate.now().toString());
     }
     public void update(int index, String newTitle, String newDescription, String newDate) {

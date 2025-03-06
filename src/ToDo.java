@@ -6,7 +6,7 @@ public class ToDo {
         SimpleTask c2 = new RecurringTask();
        c.add("task1", "desc1");
        c.print();
-       c.update(0,"tas","des");
+       c.print();
     }
 
     }

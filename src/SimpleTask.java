@@ -1,5 +1,6 @@
 
 
+import javax.xml.crypto.URIReference;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 
 public class SimpleTask {
     LocalDate date = LocalDate.now();
-    String title,description,task;
+    String task;
     boolean valid = false;
     boolean complete = false;
     ArrayList<String>tasks = new ArrayList<>();
@@ -66,21 +67,11 @@ public class SimpleTask {
     public void add(String title ,String description,String date )
     {
         if(valid(date)) {
-
-
-            this.date = LocalDate.parse(date,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
-            this.title = title;
-            this.description = description;
-
-            this.task = this.title+":\t"+this.description;
+            this.task = title +":\t"+description;
             sort();
             tasks.add(task);
             dates.add(this.date);
         }
-
-
-
     }
 
     public void update(int i , String newTitle)
@@ -98,9 +89,9 @@ public class SimpleTask {
 
             if (valid(newDate))
             {
-                LocalDate updatedDate = LocalDate.parse(newDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                tasks.set(index, newTitle + ":\t" + newDescription);
-                dates.set(index, updatedDate);
+                task = newTitle + ":\t" + newDescription;
+                tasks.set(index, task);
+                dates.set(index, date);
                 sort(); // Re-sort tasks after update
                 System.out.println("Task updated successfully.");
 

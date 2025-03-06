@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class SimpleTask {
     LocalDate date = LocalDate.now();
-    String input,title,description,task;
+    String title,description,task;
     boolean valid = false;
     boolean complete = false;
     ArrayList<String>tasks = new ArrayList<>();
@@ -17,8 +17,7 @@ public class SimpleTask {
 
     protected boolean valid(String s) {
         try {
-            this.input = s;
-            date = LocalDate.parse(input, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            date = LocalDate.parse(s, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 
             if (!date.isBefore(LocalDate.now())) {
                 valid = true;
@@ -60,6 +59,7 @@ public class SimpleTask {
         return  getClass().getName();
     }
     final public void add(String title, String description) {
+
         add(title, description, LocalDate.now().toString());
     }
 

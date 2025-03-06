@@ -2,9 +2,11 @@
 import java.util.ArrayList;
 public class ToDo {
     public static void main(String[] args) {
-        ArrayList<SimpleTask> c = new ArrayList<>();
-        SimpleTask t1 = new SimpleTask();
-        c.add(t1);
+        SimpleTask c = new SimpleTask();
+        SimpleTask c2 = new RecurringTask();
+       c.add("task1", "desc1");
+       c.print();
+       c.update(0,"tas","des");
     }
 
     }

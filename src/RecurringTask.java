@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 
-public class RecurringTask extends SimpleTask implements inter {
+public class RecurringTask extends SimpleTask {
     LocalDate endDate = LocalDate.now();
     String repeatedTask;
         public void repeat(int i,String end)
